@@ -39,7 +39,7 @@
             android:text="Фамилия" />
 
         <EditText
-            android:id="@+id/thernameText2"
+            android:id="@+id/surnameText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -67,7 +67,7 @@
             android:text="Пароль" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -80,11 +80,16 @@
             android:text="Подтверждение пароля" />
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/confirmPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/exceptionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <Button

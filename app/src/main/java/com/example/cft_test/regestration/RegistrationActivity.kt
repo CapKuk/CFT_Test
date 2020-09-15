@@ -1,11 +1,14 @@
 package com.example.cft_test.regestration
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.text.format.DateUtils
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cft_test.R
+import com.example.cft_test.hello.HelloActivity
+import com.example.cft_test.util.User
 import com.example.cft_test.util.ViewContract
 import kotlinx.android.synthetic.main.activity_registration.*
 import java.util.*
@@ -31,8 +34,22 @@ class RegistrationActivity : AppCompatActivity(), ViewContract {
         }
 
         this.completeButton.setOnClickListener{
-            //TODO: перейти на новый экран, передав туда параметры с этого.
+            presenter.validateUser(User(this.nameText.text.toString(), this.surnameText.text.toString(), dateAndTime,
+                this.password.text.toString(), this.confirmPassword.text.toString()))
         }
+    }
+
+    fun nextScreen(user: User){
+        val intent = Intent(this, HelloActivity::class.java)
+        intent.putExtra("User", user)
+        startActivity(intent)
+    }
+
+    fun exceptionPassword(){
+        this.exceptionText.text = getString(R.string.exception_password)
+    }
+    fun exceptionDate(){
+        this.exceptionText.text = getString(R.string.exception_age)
     }
 
     // отображаем диалоговое окно для выбора даты

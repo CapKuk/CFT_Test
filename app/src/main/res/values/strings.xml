@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CFT_Test</string>
+    <string name="exception_age">Вам еще нет восемнадцати лет</string>
+    <string name="exception_password">Введенные пароли не совпадают</string>
 </resources>
